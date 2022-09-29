@@ -13,12 +13,14 @@ const ListTask = ({ tasks, deleteTasks, changeDones }: ListTaskProps) => {
                                 <td>Identificacion</td>
                                 <td>Tarea por hacer</td>
                                 <td>Descripcion</td>
+                                <td>Responsable</td>
                                 <td>Estatus</td>
                             </tr>
                             <tr>
                                 <td>{tas.id}</td>
                                 <td>{tas.title}</td>
                                 <td>{tas.description}</td>
+                                <td>{tas.responsable}</td>
                                 <td>{tas.done === false ? 'Pendiente' : 'Cumplida'}</td>
                             </tr>
                         </table>

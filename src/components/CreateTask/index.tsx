@@ -11,6 +11,13 @@ const FormCreateTask = ({ task, handleSubmit, changeTask }: FormCreateTaskProps)
                 value={task?.title}
                 placeholder="Titulo de la tarea...."
             />
+            <input
+                name="responsable"
+                type="text"
+                onChange={changeTask}
+                value={task?.responsable}
+                placeholder="Responsable de la tarea...."
+            />
             <div>
                 <textarea
                     name="description"

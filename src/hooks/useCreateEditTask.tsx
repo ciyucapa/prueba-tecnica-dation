@@ -10,6 +10,7 @@ const useCreateEditTask = () => {
         id: '',
         title: '',
         description: '',
+        responsable: '',
         done: false
     })
 

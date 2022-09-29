@@ -22,6 +22,7 @@ export const appReducer = (state: any, action: any) => {
                 if(task.id === update.id) {
                     task.title = update.title
                     task.description = update.description
+                    task.responsable = update.responsable
                 }
                 return task
             });
@@ -32,10 +33,8 @@ export const appReducer = (state: any, action: any) => {
 
         case 'CHANGE_DONE': 
             const updateDone =  state.tasks.map((task: TaskProps) => {
-                console.log("es false", task.done)
                 if(task.done === false) {
                     task.done = true 
-                    console.log("cambia a true", task.done)
                 }
                 return task
             })

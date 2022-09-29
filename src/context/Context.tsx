@@ -4,7 +4,7 @@ import {v4} from 'uuid'
 
 const initialValue = {
     tasks: [
-        {id: "0", title: "Tarea 1", description: "Descripcion tarea 1", done: false}
+        {id: "0", title: "Tarea 1", description: "Descripcion tarea 1", responsable: "Cindy Caceres", done: false}
     ]
 };
 
