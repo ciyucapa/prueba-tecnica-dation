@@ -1,8 +1,9 @@
 import { FormCreateTaskProps } from '../../interfaces'
+import {CreateContainer} from '../../styles'
 
 const FormCreateTask = ({ task, handleSubmit, changeTask }: FormCreateTaskProps) => (
-    <div>
-        <h2>{task?.id ? 'Edit Task' : 'Create Task'}</h2>
+    <CreateContainer>
+        <h2>{task?.id ? 'Editar Tarea' : 'Crear Tarea'}</h2>
         <form onSubmit={handleSubmit} >
             <input
                 name="title"
@@ -27,9 +28,9 @@ const FormCreateTask = ({ task, handleSubmit, changeTask }: FormCreateTaskProps)
                 >
                 </textarea>
             </div>
-            <button>{task?.id ? 'Edit' : 'Create'}</button>
+            <button>{task?.id ? 'Editar' : 'Crear'}</button>
         </form>
-    </div>
+    </CreateContainer>
 );
 
 export default FormCreateTask;

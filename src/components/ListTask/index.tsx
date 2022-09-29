@@ -1,10 +1,11 @@
 import { Link } from 'react-router-dom';
 import {ListTaskProps} from '../../interfaces'
+import {ListarContainer} from '../../styles'
 
 const ListTask = ({ tasks, deleteTasks, changeDones }: ListTaskProps) => {
     console.log("task COMPO", tasks)
     return (
-        <div>
+        <ListarContainer>
             {tasks?.map((tas: any) => (
                 <section key={tas.id}>
                     <div>
@@ -31,7 +32,7 @@ const ListTask = ({ tasks, deleteTasks, changeDones }: ListTaskProps) => {
                 </section>
             ))
             }
-        </div>
+        </ListarContainer>
     );
     
 }
