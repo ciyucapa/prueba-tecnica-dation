@@ -1,7 +1,7 @@
 import {useEffect} from 'react'
 import { Link } from 'react-router-dom';
 import { ListTaskProps, TaskProps } from '../../interfaces'
-import { ListarContainer } from '../../styles'
+import { ListarContainer, Task } from '../../styles'
 
 const ListTask = ({ tasks, deleteTasks, changeDones, downloadTasks }: ListTaskProps) => {
     
@@ -14,26 +14,30 @@ const ListTask = ({ tasks, deleteTasks, changeDones, downloadTasks }: ListTaskPr
             {tasks?.map((tas: TaskProps) => (
                 <section key={tas.id}>
                     <div>
-                        <table>
-                            <tr>
-                                <td>Identificacion</td>
-                                <td>Tarea por hacer</td>
-                                <td>Descripcion</td>
-                                <td>Responsable</td>
-                                <td>Estatus</td>
-                            </tr>
-                            <tr>
-                                <td>{tas.id}</td>
-                                <td>{tas.title}</td>
-                                <td>{tas.description}</td>
-                                <td>{tas.responsable}</td>
-                                <td>{tas.done === false ? 'Pendiente' : 'Cumplida'}</td>
-                            </tr>
-                        </table>
+                        <Task>
+                            <p>Identificacion</p>
+                            <p>{tas.id}</p>
+                        </Task>
+                        <Task>
+                            <p>Tarea por hacer</p>
+                            <p>{tas.title}</p>
+                        </Task>
+                        <Task>
+                            <p>Descripcion</p>
+                            <p>{tas.description}</p>
+                        </Task>
+                        <Task>
+                            <p>Responsable</p>
+                            <p>{tas.responsable}</p>
+                        </Task>
+                        <Task>
+                            <p>Estado</p>
+                            <p>{tas.done === false ? 'Pendiente' : 'Cumplida'}</p>
+                        </Task>
                     </div>
-                    <Link to={`/edit/${tas.id}`}><button>Edit</button></Link>
-                    <button onClick={() => deleteTasks(tas.id)}>Delete</button>
-                    <button onClick={() => changeDones(tas.id)}>Cambiar Estatus</button>
+                    <Link to={`/edit/${tas.id}`}><button>Editar</button></Link>
+                    <button onClick={() => deleteTasks(tas.id)}>Eliminar</button>
+                    <button onClick={() => changeDones(tas.id)}>Cambiar Estado</button>
                 </section>
             ))
             }

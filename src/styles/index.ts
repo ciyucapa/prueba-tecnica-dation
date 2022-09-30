@@ -122,6 +122,22 @@ export const CreateContainer = styled.div`
 
 /*LISTAR TASK*/
 
+export const Task = styled.div`
+    background-color: #fff !important;
+    color: gray;
+    p:first-child {
+        color: gray;
+        font-size: 18px;
+        margin: 0;
+    }
+
+    p:nth-child(2) {
+        color: black;
+        margin: 0;
+    }
+
+`
+
 export const ListarContainer = styled.div`
     padding: 20px 0;
     width: 100%;
