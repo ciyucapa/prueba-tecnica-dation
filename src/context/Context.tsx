@@ -1,28 +1,18 @@
 import {createContext, useReducer} from "react";
 import {appReducer} from "./appReducer";
-import {v4} from 'uuid'
+import {v4} from 'uuid';
+import {TaskProps, ContextProps, ContextProviderProps} from '../interfaces'
 
 const initialValue = {
-    tasks: [
-        {id: "0", title: "Tarea 1", description: "Descripcion tarea 1", responsable: "Cindy Caceres", done: false}
-    ]
+    tasks: null
 };
 
-export interface ContextProviderProps {
-    addTask?: any
-    deleteTask?: any
-    updateTask?: any
-    state?: any
-    tasks?: any
-    changeDone?: any
-}
+export const Context = createContext<ContextProps>({});
 
-export const Context = createContext<ContextProviderProps>({});
-
-export const ContextProvider = ({children}: any) => {
+export const ContextProvider = ({children}: ContextProviderProps) => {
     const [state, dispatch] = useReducer(appReducer, initialValue);
 
-    const addTask = (task: any) => {
+    const addTask = (task: TaskProps) => {
         dispatch({type: 'ADD_TASK', payload:{...task, id: v4()} })
     };
 
@@ -30,7 +20,7 @@ export const ContextProvider = ({children}: any) => {
         dispatch({type: 'DELETE_TASK', payload: id})
     };
 
-    const updateTask = (task: any) => {
+    const updateTask = (task: TaskProps) => {
         dispatch({type: 'UPDATE_TASK', payload: task})
     }
 
@@ -38,9 +28,12 @@ export const ContextProvider = ({children}: any) => {
         dispatch({type: 'CHANGE_DONE', payload: id})
     }
 
+    const createTask= (taks: any) => {
+        dispatch({type: 'CREATE_TASK', payload: taks})
+    }
 
     return (
-        <Context.Provider value={{...state, addTask, deleteTask, updateTask, changeDone}}>
+        <Context.Provider value={{...state, addTask, deleteTask, updateTask, changeDone, createTask}}>
             {children}
         </Context.Provider>
     )

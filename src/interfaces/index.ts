@@ -1,3 +1,4 @@
+import {ReactNode} from "react";
 export interface TaskProps {
     id?: string
     title?: string
@@ -8,12 +9,29 @@ export interface TaskProps {
 
 export interface FormCreateTaskProps {
     task?: TaskProps
-    handleSubmit?: any
     changeTask?: any
+    handleSubmitCreate?: any
+    handleSubmitUpdate?: any
+    handleSubmit?: any
 }
 
 export interface ListTaskProps {
     tasks?: TaskProps[]
     deleteTasks?: any
     changeDones?: any
+    downloadTasks?: any
+}
+
+export interface ContextProps {
+    addTask?: any
+    deleteTask?: any
+    updateTask?: any
+    state?: any
+    tasks?: any
+    changeDone?: any
+    createTask?: any
+}
+
+export interface ContextProviderProps {
+    children?: ReactNode
 }

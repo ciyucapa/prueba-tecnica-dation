@@ -1,12 +1,17 @@
+import {useEffect} from 'react'
 import { Link } from 'react-router-dom';
-import {ListTaskProps} from '../../interfaces'
-import {ListarContainer} from '../../styles'
+import { ListTaskProps, TaskProps } from '../../interfaces'
+import { ListarContainer } from '../../styles'
 
-const ListTask = ({ tasks, deleteTasks, changeDones }: ListTaskProps) => {
-    console.log("task COMPO", tasks)
+const ListTask = ({ tasks, deleteTasks, changeDones, downloadTasks }: ListTaskProps) => {
+    
+    useEffect(() => {
+        downloadTasks()
+    }, [])
+
     return (
         <ListarContainer>
-            {tasks?.map((tas: any) => (
+            {tasks?.map((tas: TaskProps) => (
                 <section key={tas.id}>
                     <div>
                         <table>
@@ -26,7 +31,7 @@ const ListTask = ({ tasks, deleteTasks, changeDones }: ListTaskProps) => {
                             </tr>
                         </table>
                     </div>
-                    <Link to={`/edit${tas.id}`}><button>Edit</button></Link>
+                    <Link to={`/edit/${tas.id}`}><button>Edit</button></Link>
                     <button onClick={() => deleteTasks(tas.id)}>Delete</button>
                     <button onClick={() => changeDones(tas.id)}>Cambiar Estatus</button>
                 </section>

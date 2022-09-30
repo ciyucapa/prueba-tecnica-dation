@@ -16,7 +16,7 @@ const Navigation = () => (
             <Routes >
                 <Route path='/list' element={<ContainerListTask/>}/>
                 <Route path='/create' element={<CreateTask/>}/>
-                <Route path='/edit:id' element={<CreateTask/>}/>
+                <Route path='/edit/:id' element={<CreateTask/>}/>
             </Routes >
         </Router>
     </ContextProvider>

@@ -40,6 +40,13 @@ export const appReducer = (state: any, action: any) => {
            )
         };
 
+        case 'CREATE_TASK': 
+        const newTasks = action.payload;
+
+        return {
+            tasks: newTasks
+        };
+
         default:
             break;
     };
