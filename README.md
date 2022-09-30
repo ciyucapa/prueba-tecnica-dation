@@ -57,3 +57,9 @@ Pasos a seguir para usar la API de manera local
     "web-vitals": "^2.1.4"
   },
 ```
+### Evidencias
+
+![crud](https://github.com/ciyucapa/shop-react/blob/main/src/utils/LISTA-TAREAS.PNG)<br>
+![crud](https://github.com/ciyucapa/shop-react/blob/main/src/utils/EDITAR-TAREAS.PNG)<br>
+![crud](https://github.com/ciyucapa/shop-react/blob/main/src/utils/CREAR-TAREAS.PNG)<br>
+![crud](https://github.com/ciyucapa/shop-react/blob/main/src/utils/ULR-API.PNG)<br>
