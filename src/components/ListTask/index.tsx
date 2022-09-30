@@ -28,7 +28,7 @@ const ListTask = ({ tasks, deleteTasks, changeDones }: ListTaskProps) => {
                     </div>
                     <Link to={`/edit${tas.id}`}><button>Edit</button></Link>
                     <button onClick={() => deleteTasks(tas.id)}>Delete</button>
-                    <button onClick={() => changeDones()}>Cambiar Estatus</button>
+                    <button onClick={() => changeDones(tas.id)}>Cambiar Estatus</button>
                 </section>
             ))
             }

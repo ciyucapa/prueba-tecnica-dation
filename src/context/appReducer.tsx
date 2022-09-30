@@ -32,15 +32,12 @@ export const appReducer = (state: any, action: any) => {
         };
 
         case 'CHANGE_DONE': 
-            const updateDone =  state.tasks.map((task: TaskProps) => {
-                if(task.done === false) {
-                    task.done = true 
-                }
-                return task
-            })
+            const updateNew = action.payload;
 
         return {
-            tasks: updateDone
+            tasks: state.tasks.map((task: TaskProps) => 
+            task.id === updateNew ? {...task, done: !task.done } : task
+           )
         };
 
         default:

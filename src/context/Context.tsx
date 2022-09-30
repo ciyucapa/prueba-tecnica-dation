@@ -34,9 +34,10 @@ export const ContextProvider = ({children}: any) => {
         dispatch({type: 'UPDATE_TASK', payload: task})
     }
 
-    const changeDone = (task: any) => {
-        dispatch({type: 'CHANGE_DONE', payload: task})
+    const changeDone = (id: string) => {
+        dispatch({type: 'CHANGE_DONE', payload: id})
     }
+
 
     return (
         <Context.Provider value={{...state, addTask, deleteTask, updateTask, changeDone}}>

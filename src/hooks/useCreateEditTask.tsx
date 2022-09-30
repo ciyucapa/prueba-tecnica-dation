@@ -39,8 +39,8 @@ const useCreateEditTask = () => {
         deleteTask(id);
     };
 
-    const changeDones = () => {
-        changeDone() 
+    const changeDones = (id: string) => {
+        changeDone(id) 
     };
 
     const isDisabled = () => {
