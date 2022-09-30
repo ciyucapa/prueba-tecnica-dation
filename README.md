@@ -60,6 +60,6 @@ Pasos a seguir para usar la API de manera local
 ### Evidencias
 
 ![crud](https://github.com/ciyucapa/prueba-tecnica-dation/blob/main/src/utils/LISTA-TAREAS.PNG)<br>
-![crud](https://github.com/ciyucapa/prueba-tecnica-dation/blob/main/src/utils/EDITAR-TAREAS.PNG)<br>
-![crud](https://github.com/ciyucapa/prueba-tecnica-dation/blob/main/src/utils/CREAR-TAREAS.PNG)<br>
+![crud](https://github.com/ciyucapa/prueba-tecnica-dation/blob/main/src/utils/EDITAR-TAREA.PNG)<br>
+![crud](https://github.com/ciyucapa/prueba-tecnica-dation/blob/main/src/utils/CREAR-TAREA.PNG)<br>
 ![crud](https://github.com/ciyucapa/prueba-tecnica-dation/blob/main/src/utils/ULR-API.PNG)<br>
