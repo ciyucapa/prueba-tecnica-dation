@@ -1,21 +1,59 @@
 # Crud - Prueba tecnica Doction
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+El siguiente proyecto de CRUD se realiza con React.js
+Utilizando como API REST (falsa) json-server https://www.npmjs.com/package/json-server
 
-## Available Scripts
+### Instalación
+`npm i `
 
-In the project directory, you can run:
+### Ejecución del proyecto
+`npm start`
 
-### `npm start`
+## JSON-SERVER
+Pasos a seguir para usar la API de manera local
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Instalación
+`npm install -g json-server`
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### Data
+ -Crear db.json con la data a utilizar
+ ```
+ {
+    "tasks": [
+        {
+            "id": "0",
+            "title": "Tarea 1",
+            "description": "Descripcion tarea 1",
+            "responsable": "Cindy Caceres",
+            "done": false
+        }
+    ]
+}
+```
+### Data
+`json-server --watch db.json`
 
-### `npm test`
+### Url disponible
+`http://localhost:3000/tasks`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
+### Dependencias
+```
+"dependencies": {
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "@types/jest": "^27.5.2",
+    "@types/node": "^16.11.62",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "axios": "^0.27.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.4.1",
+    "react-scripts": "5.0.1",
+    "styled-components": "^5.3.6",
+    "typescript": "^4.8.4",
+    "uuid": "^9.0.0",
+    "web-vitals": "^2.1.4"
+  },
+```
