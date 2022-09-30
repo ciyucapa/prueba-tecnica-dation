@@ -21,8 +21,6 @@ const useCreateEditTask = () => {
 
     useEffect(() => {
         const tareaencontrada = tasks?.find((index : TaskProps) => index.id == params.id);
-        console.log("tasks EFECT", tasks)
-        console.log("paramID EFECT", params.id)
         if(tareaencontrada){
             setTask(tareaencontrada)
         }
@@ -37,18 +35,14 @@ const useCreateEditTask = () => {
     const handleSubmit = async(e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault()
         if(task.id) {
-            console.log("update")
-            console.log("task udate", task)
             await updateTasksService(task, task.id)
             updateTask(task)
         } else {
-            console.log("crrear")
-            console.log("task crea", task)
             try {
                 await createTasksService(task)
                 addTask(task);
             } catch (error) {
-                
+                console.log("e", error)
             }
         }
         navigate('/list')
@@ -60,7 +54,7 @@ const useCreateEditTask = () => {
             deleteTask(id);
             console.log("da", response)
         } catch (error) {
-            
+            console.log("e", error)
         }
     };
 
@@ -72,7 +66,7 @@ const useCreateEditTask = () => {
             await updateTasksService(tareaencontrada, id)
             global.window.location.reload()
         } catch (error) {
-            
+            console.log("e", error)
         }
     };
 
